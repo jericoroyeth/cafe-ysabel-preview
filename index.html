@@ -4,21 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Café Ysabel | Heritage Dining Since 1982</title>
+    <meta name="description" content="A 1927 ancestral home transformed into Manila's most beloved dining destination. Fine Filipino-European cuisine by Chef Gene Gonzalez.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #C9A86C;
-            --gold-light: #E8D5B5;
-            --gold-dark: #8B7355;
-            --burgundy: #722F37;
-            --burgundy-dark: #4A1F24;
-            --cream: #FDF8F3;
-            --cream-dark: #F5EDE3;
-            --charcoal: #2C2C2C;
-            --brown: #5C4033;
-            --green-accent: #4A5D4A;
+            --primary: #2D5A3D;
+            --primary-light: #3D7A52;
+            --primary-dark: #1E3D29;
+            --gold: #B8956E;
+            --gold-light: #D4B896;
+            --cream: #FDFCFA;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
         }
 
         * {
@@ -32,22 +40,10 @@
         }
 
         body {
-            font-family: 'Jost', sans-serif;
-            background-color: var(--cream);
-            color: var(--charcoal);
-            overflow-x: hidden;
-        }
-
-        /* Elegant Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--cream-dark);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--gold);
-            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--gray-800);
+            line-height: 1.6;
         }
 
         /* Navigation */
@@ -57,820 +53,632 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 1.5rem 4rem;
+            padding: 1rem 4rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(to bottom, rgba(44,44,44,0.9), transparent);
-            transition: all 0.4s ease;
-        }
-
-        nav.scrolled {
-            background: rgba(44, 44, 44, 0.98);
-            padding: 1rem 4rem;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-100);
+            transition: all 0.3s ease;
         }
 
         .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--gold);
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .logo span {
+        .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
             font-style: italic;
             font-weight: 400;
-            text-transform: lowercase;
-            letter-spacing: 1px;
+            color: var(--primary);
         }
 
         .nav-links {
             display: flex;
-            gap: 3rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--cream);
+            color: var(--gray-600);
             text-decoration: none;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 400;
-            position: relative;
+            font-size: 0.9rem;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--gold);
-            transition: width 0.3s;
-        }
-
         .nav-links a:hover {
-            color: var(--gold);
+            color: var(--primary);
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .reserve-btn {
-            background: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 0.8rem 2rem;
-            font-family: 'Jost', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
             transition: all 0.3s;
         }
 
-        .reserve-btn:hover {
-            background: var(--gold);
-            color: var(--charcoal);
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
-            position: relative;
-            display: flex;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             align-items: center;
-            justify-content: center;
-            background: linear-gradient(rgba(44,44,44,0.7), rgba(74,31,36,0.8)), 
-                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80');
-            background-size: cover;
-            background-position: center;
+            padding: 120px 4rem 80px;
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+            position: relative;
             overflow: hidden;
         }
 
-        .hero-pattern {
+        .hero::before {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 0.05;
-            background-image: 
-                radial-gradient(circle at 25% 25%, var(--gold) 1px, transparent 1px),
-                radial-gradient(circle at 75% 75%, var(--gold) 1px, transparent 1px);
-            background-size: 60px 60px;
-        }
-
-        .hero-frame {
-            position: absolute;
-            top: 40px;
-            left: 40px;
-            right: 40px;
-            bottom: 40px;
-            border: 1px solid rgba(201, 168, 108, 0.3);
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(45, 90, 61, 0.03) 0%, transparent 70%);
             pointer-events: none;
         }
 
-        .hero-frame::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
-            bottom: 20px;
-            border: 1px solid rgba(201, 168, 108, 0.15);
-        }
-
         .hero-content {
-            text-align: center;
-            z-index: 10;
-            padding: 2rem;
-        }
-
-        .hero-subtitle {
-            font-family: 'Jost', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.3s forwards;
-        }
-
-        .hero-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(3.5rem, 10vw, 8rem);
-            font-weight: 400;
-            color: var(--cream);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.5s forwards;
-        }
-
-        .hero-title span {
-            font-style: italic;
-            color: var(--gold);
-        }
-
-        .hero-tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-style: italic;
-            color: var(--gold-light);
-            margin-top: 1rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.7s forwards;
-        }
-
-        .hero-year {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.9s forwards;
-        }
-
-        .hero-year span {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1rem;
-            letter-spacing: 3px;
-            color: var(--gold);
-        }
-
-        .hero-year .line {
-            width: 80px;
-            height: 1px;
-            background: var(--gold);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 60px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease 1.1s forwards;
-        }
-
-        .scroll-indicator span {
-            font-size: 0.7rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--gold);
-        }
-
-        .scroll-indicator .mouse {
-            width: 20px;
-            height: 32px;
-            border: 1px solid var(--gold);
-            border-radius: 10px;
+            max-width: 600px;
             position: relative;
-        }
-
-        .scroll-indicator .mouse::before {
-            content: '';
-            position: absolute;
-            top: 6px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 3px;
-            height: 6px;
-            background: var(--gold);
-            border-radius: 2px;
-            animation: scrollDown 1.5s infinite;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes scrollDown {
-            0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
-            50% { opacity: 0.3; transform: translateX(-50%) translateY(8px); }
-        }
-
-        /* Heritage Section */
-        .heritage {
-            padding: 8rem 4rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .heritage-image {
-            position: relative;
-        }
-
-        .heritage-image .frame {
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            right: 20px;
-            bottom: 20px;
-            border: 1px solid var(--gold);
             z-index: 1;
         }
 
-        .heritage-image .img-placeholder {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            height: 500px;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80');
-            background-size: cover;
-            background-position: center;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gray-100);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+
+        .hero-badge span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 500;
+            color: var(--gray-900);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--gray-500);
+            margin-bottom: 2rem;
+            max-width: 480px;
+            line-height: 1.8;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .hero-feature .icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gray-100);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            font-size: 1.1rem;
         }
 
-        .heritage-image .img-placeholder::before {
-            content: '';
+        .hero-feature .text {
+            font-size: 0.85rem;
+            color: var(--gray-600);
         }
 
-        .heritage-content .section-label {
-            font-size: 0.75rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--gold-dark);
-            margin-bottom: 1rem;
+        .hero-feature .text strong {
+            display: block;
+            color: var(--gray-800);
+            font-weight: 600;
         }
 
-        .heritage-content h2 {
+        /* Hero Form */
+        .hero-form-container {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.08);
+            border: 1px solid var(--gray-100);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-form-container h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            font-weight: 400;
-            color: var(--charcoal);
-            line-height: 1.2;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-form-container p {
+            color: var(--gray-500);
+            font-size: 0.95rem;
             margin-bottom: 2rem;
         }
 
-        .heritage-content h2 span {
-            font-style: italic;
-            color: var(--burgundy);
+        .form-group {
+            margin-bottom: 1.25rem;
         }
 
-        .heritage-content p {
-            font-size: 1.05rem;
-            line-height: 1.9;
-            color: var(--brown);
-            margin-bottom: 1.5rem;
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            margin-bottom: 0.5rem;
         }
 
-        .heritage-content .signature {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-style: italic;
-            color: var(--burgundy);
-            margin-top: 2rem;
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--gray-200);
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--gray-800);
+            background: var(--gray-50);
+            transition: all 0.3s;
         }
 
-        /* Signature Dishes */
-        .dishes {
-            background: var(--charcoal);
-            padding: 8rem 4rem;
-            position: relative;
-            overflow: hidden;
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(45, 90, 61, 0.1);
         }
 
-        .dishes::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(201, 168, 108, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(114, 47, 55, 0.05) 0%, transparent 50%);
-        }
-
-        .dishes-header {
-            text-align: center;
-            margin-bottom: 5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .dishes-header .section-label {
-            font-size: 0.75rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .dishes-header h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            font-weight: 400;
-            color: var(--cream);
-        }
-
-        .dishes-header h2 span {
-            font-style: italic;
-            color: var(--gold);
-        }
-
-        .dishes-grid {
+        .form-row {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(45, 90, 61, 0.2);
+        }
+
+        .form-note {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--gray-400);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 4rem;
+            background: var(--white);
+        }
+
+        .about-container {
             max-width: 1200px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
         }
 
-        .dish-card {
-            background: rgba(253, 248, 243, 0.03);
-            border: 1px solid rgba(201, 168, 108, 0.2);
-            padding: 2.5rem;
-            text-align: center;
-            transition: all 0.4s ease;
+        .about-image {
             position: relative;
-            overflow: hidden;
         }
 
-        .dish-card::before {
-            content: '';
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .about-image .badge {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
+            bottom: -20px;
+            right: -20px;
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(45, 90, 61, 0.3);
         }
 
-        .dish-card:hover {
-            transform: translateY(-10px);
-            background: rgba(253, 248, 243, 0.06);
-            border-color: var(--gold);
-        }
-
-        .dish-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .dish-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .dish-card h3 {
+        .about-image .badge h4 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
-            font-weight: 500;
-            color: var(--cream);
+            font-size: 2.5rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .about-image .badge p {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.25rem;
+            opacity: 0.9;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
             margin-bottom: 1rem;
         }
 
-        .dish-card p {
-            font-size: 0.9rem;
-            line-height: 1.7;
-            color: var(--gold-light);
-            opacity: 0.8;
-        }
-
-        .dish-card .price {
+        .about-content h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            color: var(--gold);
-            margin-top: 1.5rem;
+            font-size: 3rem;
+            font-weight: 500;
+            color: var(--gray-900);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
         }
 
-        /* Ambiance Section */
-        .ambiance {
-            padding: 8rem 4rem;
-            background: var(--cream-dark);
+        .about-content p {
+            color: var(--gray-500);
+            font-size: 1.05rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
         }
 
-        .ambiance-grid {
+        /* Menu Section */
+        .menu {
+            padding: 100px 4rem;
+            background: var(--gray-50);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 500;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--gray-500);
+            font-size: 1.05rem;
+        }
+
+        .menu-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            max-width: 1400px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .ambiance-card {
-            position: relative;
-            height: 350px;
+        .menu-card {
+            background: var(--white);
+            border-radius: 16px;
             overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid var(--gray-100);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+        }
+
+        .menu-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .menu-content {
+            padding: 1.5rem;
+        }
+
+        .menu-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-content p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        .menu-content .price {
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        /* Chef Section */
+        .chef {
+            padding: 100px 4rem;
+            background: var(--white);
+        }
+
+        .chef-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .chef-content blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-style: italic;
+            color: var(--gray-700);
+            line-height: 1.5;
+            margin: 2rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        .chef-content .chef-name {
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .chef-content .chef-title {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+        }
+
+        .chef-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 4rem;
+            background: var(--gray-50);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
             cursor: pointer;
         }
 
-        .ambiance-card:first-child {
+        .gallery-item:first-child {
             grid-column: span 2;
             grid-row: span 2;
             height: 100%;
         }
 
-        .ambiance-card .bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, var(--burgundy) 0%, var(--brown) 100%);
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.6s ease;
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
         }
 
-        .ambiance-card:nth-child(1) .bg {
-            background: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .ambiance-card:nth-child(2) .bg {
-            background: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .ambiance-card:nth-child(3) .bg {
-            background: url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=600&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .ambiance-card:nth-child(4) .bg {
-            background: url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .ambiance-card:nth-child(5) .bg {
-            background: url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .ambiance-card:hover .bg {
+        .gallery-item:hover img {
             transform: scale(1.1);
         }
 
-        .ambiance-card .overlay {
+        .gallery-item .overlay {
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(44,44,44,0.9) 0%, transparent 60%);
-            z-index: 1;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
-        .ambiance-card .content {
-            position: absolute;
-            bottom: 2rem;
-            left: 2rem;
-            right: 2rem;
-            z-index: 2;
+        .gallery-item:hover .overlay {
+            opacity: 1;
         }
 
-        .ambiance-card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            color: var(--cream);
-            margin-bottom: 0.5rem;
+        .gallery-item .overlay h4 {
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
         }
 
-        .ambiance-card p {
-            font-size: 0.85rem;
-            color: var(--gold-light);
+        /* Contact Section */
+        .contact {
+            padding: 100px 4rem;
+            background: var(--gray-900);
+            color: white;
         }
 
-        /* Chef Section */
-        .chef {
-            padding: 8rem 4rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
-            max-width: 1400px;
+        .contact-container {
+            max-width: 1000px;
             margin: 0 auto;
+            text-align: center;
         }
 
-        .chef-content .section-label {
-            font-size: 0.75rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--gold-dark);
-            margin-bottom: 1rem;
-        }
-
-        .chef-content h2 {
+        .contact h2 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 3rem;
-            font-weight: 400;
-            color: var(--charcoal);
-            line-height: 1.2;
-            margin-bottom: 2rem;
-        }
-
-        .chef-content blockquote {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-style: italic;
-            color: var(--burgundy);
-            line-height: 1.5;
-            border-left: 3px solid var(--gold);
-            padding-left: 2rem;
-            margin: 2rem 0;
-        }
-
-        .chef-content .chef-name {
-            font-size: 1.1rem;
-            color: var(--brown);
             font-weight: 500;
-        }
-
-        .chef-content .chef-title {
-            font-size: 0.85rem;
-            color: var(--gold-dark);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .chef-image {
-            position: relative;
-        }
-
-        .chef-image .img-placeholder {
-            width: 100%;
-            height: 550px;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                        url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .chef-image .img-placeholder::before {
-            content: '';
-        }
-
-        .chef-image .badge {
-            position: absolute;
-            bottom: -30px;
-            right: -30px;
-            width: 150px;
-            height: 150px;
-            background: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .chef-image .badge span:first-child {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--charcoal);
-            line-height: 1;
-        }
-
-        .chef-image .badge span:last-child {
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--charcoal);
-            margin-top: 0.3rem;
-        }
-
-        /* Reservation Section */
-        .reservation {
-            background: linear-gradient(135deg, var(--burgundy-dark) 0%, var(--charcoal) 100%);
-            padding: 8rem 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .reservation::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border: 1px solid rgba(201, 168, 108, 0.2);
-            margin: 40px;
-            pointer-events: none;
-        }
-
-        .reservation-content {
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .reservation .section-label {
-            font-size: 0.75rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--gold);
             margin-bottom: 1rem;
         }
 
-        .reservation h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            font-weight: 400;
-            color: var(--cream);
-            margin-bottom: 1.5rem;
-        }
-
-        .reservation p {
-            font-size: 1.1rem;
-            color: var(--gold-light);
+        .contact > p {
+            color: var(--gray-400);
             margin-bottom: 3rem;
-            line-height: 1.8;
+            font-size: 1.1rem;
         }
 
-        .contact-details {
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+        }
+
+        .contact-card .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h4 {
+            font-size: 0.8rem;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a,
+        .contact-card p {
+            color: white;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        .social-links {
             display: flex;
             justify-content: center;
-            gap: 4rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
+            gap: 1rem;
         }
 
-        .contact-item {
-            text-align: center;
-        }
-
-        .contact-item .icon {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-item .label {
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-item .value {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            color: var(--cream);
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--charcoal);
-            padding: 1.2rem 3.5rem;
-            font-family: 'Jost', sans-serif;
-            font-size: 0.85rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             text-decoration: none;
-            font-weight: 500;
+            font-size: 1.2rem;
             transition: all 0.3s;
-            border: 2px solid var(--gold);
         }
 
-        .cta-btn:hover {
-            background: transparent;
-            color: var(--gold);
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
         }
 
         /* Footer */
         footer {
-            background: var(--charcoal);
-            padding: 4rem;
+            padding: 2rem 4rem;
+            background: var(--gray-800);
             text-align: center;
-            border-top: 1px solid rgba(201, 168, 108, 0.2);
         }
 
-        .footer-logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--gold);
-            letter-spacing: 3px;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-address {
-            font-size: 0.9rem;
-            color: var(--gold-light);
-            opacity: 0.7;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-social a {
-            width: 45px;
-            height: 45px;
-            border: 1px solid rgba(201, 168, 108, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .footer-social a:hover {
-            background: var(--gold);
-            color: var(--charcoal);
-            border-color: var(--gold);
-        }
-
-        .footer-copy {
-            font-size: 0.75rem;
-            color: var(--gold-dark);
-            letter-spacing: 1px;
+        footer p {
+            color: var(--gray-500);
+            font-size: 0.85rem;
         }
 
         /* Demo Badge */
@@ -878,15 +686,14 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: var(--gold);
-            color: var(--charcoal);
+            background: var(--primary);
+            color: white;
             padding: 1rem 1.5rem;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            border-radius: 12px;
+            font-size: 0.8rem;
             font-weight: 500;
             z-index: 9999;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
 
         .demo-badge span {
@@ -894,195 +701,220 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 1rem;
             font-style: italic;
-            letter-spacing: 0;
-            text-transform: none;
-            margin-top: 0.3rem;
+            margin-top: 0.25rem;
+            opacity: 0.9;
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .heritage, .chef {
+            .hero {
                 grid-template-columns: 1fr;
                 gap: 3rem;
+                padding: 120px 2rem 60px;
             }
-            .dishes-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .ambiance-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .ambiance-card:first-child {
-                grid-column: span 2;
-                grid-row: span 1;
-                height: 350px;
-            }
+            .hero h1 { font-size: 3rem; }
+            .hero-form-container { max-width: 500px; margin: 0 auto; }
+            .about-container, .chef-container { grid-template-columns: 1fr; gap: 3rem; }
+            .menu-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item:first-child { grid-column: span 2; grid-row: span 1; height: 300px; }
+            .contact-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
-            nav {
-                padding: 1rem 2rem;
-            }
-            .nav-links {
-                display: none;
-            }
-            .hero-title {
-                font-size: 3rem;
-            }
-            .heritage, .dishes, .ambiance, .chef, .reservation {
-                padding: 4rem 2rem;
-            }
-            .dishes-grid {
-                grid-template-columns: 1fr;
-            }
-            .ambiance-grid {
-                grid-template-columns: 1fr;
-            }
-            .ambiance-card:first-child {
-                grid-column: span 1;
-            }
-            .contact-details {
-                flex-direction: column;
-                gap: 2rem;
-            }
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .hero { padding: 100px 1.5rem 60px; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-features { flex-direction: column; gap: 1rem; }
+            .hero-form-container { padding: 2rem; }
+            .form-row { grid-template-columns: 1fr; }
+            section { padding: 60px 1.5rem; }
+            .menu-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item:first-child { grid-column: span 1; }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="navbar">
-        <div class="logo">Café <span>Ysabel</span></div>
+    <nav>
+        <div class="logo">
+            <span class="logo-text">Café <span>Ysabel</span></span>
+        </div>
         <ul class="nav-links">
-            <li><a href="#heritage">Our Story</a></li>
-            <li><a href="#dishes">Menu</a></li>
-            <li><a href="#ambiance">Ambiance</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#menu">Menu</a></li>
             <li><a href="#chef">The Chef</a></li>
-            <li><a href="#reservation">Contact</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-        <button class="reserve-btn">Reserve a Table</button>
+        <a href="tel:+639955905515" class="nav-cta">Call to Reserve</a>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Form -->
     <section class="hero">
-        <div class="hero-pattern"></div>
-        <div class="hero-frame"></div>
         <div class="hero-content">
-            <p class="hero-subtitle">A Heritage Dining Experience</p>
-            <h1 class="hero-title">Café <span>Ysabel</span></h1>
-            <p class="hero-tagline">Where culinary artistry meets ancestral elegance</p>
-            <div class="hero-year">
-                <span class="line"></span>
-                <span>Est. 1982</span>
-                <span class="line"></span>
+            <div class="hero-badge">
+                🏛️ Heritage Dining <span>Since 1982</span>
+            </div>
+            <h1>Where History Meets <em>Culinary Excellence</em></h1>
+            <p>Experience the magic of a 1927 ancestral home transformed into Manila's most beloved dining destination. Fine Filipino-European cuisine by Chef Gene Gonzalez.</p>
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <div class="icon">🏠</div>
+                    <div class="text">
+                        <strong>Ancestral Home</strong>
+                        Built in 1927
+                    </div>
+                </div>
+                <div class="hero-feature">
+                    <div class="icon">👨‍🍳</div>
+                    <div class="text">
+                        <strong>Chef Gene</strong>
+                        40+ Years of Excellence
+                    </div>
+                </div>
+                <div class="hero-feature">
+                    <div class="icon">⭐</div>
+                    <div class="text">
+                        <strong>Award-Winning</strong>
+                        Culinary Legacy
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <span>Discover</span>
-            <div class="mouse"></div>
+
+        <!-- Reservation Form -->
+        <div class="hero-form-container">
+            <h3>Reserve Your Table</h3>
+            <p>Book your dining experience at Café Ysabel</p>
+            <form id="reservationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Juan Dela Cruz" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+63 9XX XXX XXXX" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Time</label>
+                        <select required>
+                            <option value="">Select time...</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Number of Guests</label>
+                    <select required>
+                        <option value="">Select guests...</option>
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5">5 Guests</option>
+                        <option value="6">6-10 Guests</option>
+                        <option value="10">10+ Guests (Private Event)</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Request Reservation</button>
+                <p class="form-note">We'll confirm your booking within 24 hours</p>
+            </form>
         </div>
     </section>
 
-    <!-- Heritage Section -->
-    <section class="heritage" id="heritage">
-        <div class="heritage-image">
-            <div class="frame"></div>
-            <div class="img-placeholder"></div>
-        </div>
-        <div class="heritage-content">
-            <p class="section-label">Our Heritage</p>
-            <h2>A 1927 Ancestral Home <span>Transformed</span></h2>
-            <p>Nestled in the heart of San Juan, Café Ysabel is more than a restaurant—it is a journey through time. Our Spanish-Filipino ancestral home, built in 1927, has been lovingly transformed into Manila's most storied dining destination.</p>
-            <p>Since 1982, we have welcomed generations of discerning diners to experience the warmth of heritage hospitality, where period furniture and wooden ceiling fans create an atmosphere of timeless elegance.</p>
-            <p class="signature">— A landmark in Philippine culinary history</p>
-        </div>
-    </section>
-
-    <!-- Signature Dishes -->
-    <section class="dishes" id="dishes">
-        <div class="dishes-header">
-            <p class="section-label">Culinary Excellence</p>
-            <h2>Our <span>Signature</span> Creations</h2>
-        </div>
-        <div class="dishes-grid">
-            <div class="dish-card">
-                <div class="dish-icon">🍰</div>
-                <h3>Strawberry Shortcake</h3>
-                <p>Our legendary dessert that has delighted patrons for over four decades. Fresh strawberries, delicate sponge, heavenly cream.</p>
-                <div class="price">₱385</div>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Café Ysabel Heritage Home">
+                <div class="badge">
+                    <h4>40+</h4>
+                    <p>Years of Excellence</p>
+                </div>
             </div>
-            <div class="dish-card">
-                <div class="dish-icon">🍔</div>
-                <h3>CYB Burger</h3>
-                <p>Double patty perfection with luxurious foie gras, caramelized onions, peppercorn gravy & truffle fries.</p>
-                <div class="price">₱895</div>
-            </div>
-            <div class="dish-card">
-                <div class="dish-icon">🍝</div>
-                <h3>Pasta Ysabel</h3>
-                <p>Our namesake pasta—a harmonious blend of flavors that has become synonymous with Café Ysabel excellence.</p>
-                <div class="price">₱545</div>
-            </div>
-            <div class="dish-card">
-                <div class="dish-icon">🥗</div>
-                <h3>Caesar Salad</h3>
-                <p>Prepared tableside with theatrical flair. Crisp romaine, aged parmesan, house-made dressing.</p>
-                <div class="price">₱425</div>
-            </div>
-            <div class="dish-card">
-                <div class="dish-icon">🥩</div>
-                <h3>Gene's Argentine Steak</h3>
-                <p>Premium cut, grilled to perfection, served with Chef Gene's signature chimichurri.</p>
-                <div class="price">₱1,295</div>
-            </div>
-            <div class="dish-card">
-                <div class="dish-icon">🍮</div>
-                <h3>Chocolate Soufflé</h3>
-                <p>Made to order—a 20-minute wait for pure chocolate perfection. Served with amaretto sauce.</p>
-                <div class="price">₱445</div>
+            <div class="about-content">
+                <p class="section-label">Our Story</p>
+                <h2>A 1927 Ancestral Home, Reimagined</h2>
+                <p>Nestled in the heart of San Juan, Café Ysabel occupies a beautifully preserved 1927 Spanish-Filipino ancestral home. Since 1982, we have welcomed generations of discerning diners to experience the warmth of heritage hospitality.</p>
+                <p>Our dining rooms are furnished with period furniture, wooden ceiling fans, and overlooking a tree-laden garden — creating the perfect atmosphere for memorable meals with family and friends.</p>
+                <p>More than a restaurant, Café Ysabel is a cultural landmark that continues to serve as the backdrop for countless celebrations, business meetings, and intimate gatherings.</p>
             </div>
         </div>
     </section>
 
-    <!-- Ambiance Section -->
-    <section class="ambiance" id="ambiance">
-        <div class="ambiance-grid">
-            <div class="ambiance-card">
-                <div class="bg"></div>
-                <div class="overlay"></div>
-                <div class="content">
-                    <h3>The Main Dining Hall</h3>
-                    <p>Original 1927 architecture preserved</p>
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="section-header">
+            <p class="section-label">Our Specialties</p>
+            <h2>Signature Dishes</h2>
+            <p>A curated selection of our most beloved creations, perfected over four decades.</p>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="menu-image">🍰</div>
+                <div class="menu-content">
+                    <h3>Strawberry Shortcake</h3>
+                    <p>Our legendary dessert — fresh strawberries, delicate sponge, and heavenly cream.</p>
+                    <span class="price">₱385</span>
                 </div>
             </div>
-            <div class="ambiance-card">
-                <div class="bg"></div>
-                <div class="overlay"></div>
-                <div class="content">
-                    <h3>Garden Veranda</h3>
-                    <p>Al fresco dining</p>
+            <div class="menu-card">
+                <div class="menu-image">🍔</div>
+                <div class="menu-content">
+                    <h3>CYB Burger</h3>
+                    <p>Double patty with luxurious foie gras, caramelized onions, and truffle fries.</p>
+                    <span class="price">₱895</span>
                 </div>
             </div>
-            <div class="ambiance-card">
-                <div class="bg"></div>
-                <div class="overlay"></div>
-                <div class="content">
-                    <h3>Private Rooms</h3>
-                    <p>Intimate gatherings</p>
+            <div class="menu-card">
+                <div class="menu-image">🍝</div>
+                <div class="menu-content">
+                    <h3>Pasta Ysabel</h3>
+                    <p>Our namesake pasta — a harmonious blend of flavors that defines our kitchen.</p>
+                    <span class="price">₱545</span>
                 </div>
             </div>
-            <div class="ambiance-card">
-                <div class="bg"></div>
-                <div class="overlay"></div>
-                <div class="content">
-                    <h3>Wine Cellar</h3>
-                    <p>Curated selections</p>
+            <div class="menu-card">
+                <div class="menu-image">🥗</div>
+                <div class="menu-content">
+                    <h3>Caesar Salad</h3>
+                    <p>Prepared tableside with theatrical flair, crisp romaine, and aged parmesan.</p>
+                    <span class="price">₱425</span>
                 </div>
             </div>
-            <div class="ambiance-card">
-                <div class="bg"></div>
-                <div class="overlay"></div>
-                <div class="content">
-                    <h3>Bar Lounge</h3>
-                    <p>Classic cocktails</p>
+            <div class="menu-card">
+                <div class="menu-image">🥩</div>
+                <div class="menu-content">
+                    <h3>Gene's Argentine Steak</h3>
+                    <p>Premium cut grilled to perfection with Chef Gene's signature chimichurri.</p>
+                    <span class="price">₱1,295</span>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="menu-image">🍮</div>
+                <div class="menu-content">
+                    <h3>Chocolate Soufflé</h3>
+                    <p>Made to order — pure chocolate perfection served with amaretto sauce.</p>
+                    <span class="price">₱445</span>
                 </div>
             </div>
         </div>
@@ -1090,84 +922,105 @@
 
     <!-- Chef Section -->
     <section class="chef" id="chef">
-        <div class="chef-content">
-            <p class="section-label">The Maestro</p>
-            <h2>Chef Gene Gonzalez</h2>
-            <blockquote>
-                "Cooking is not just about recipes—it's about preserving memories, honoring tradition, and creating moments that last a lifetime."
-            </blockquote>
-            <p class="chef-name">Chef Gene Gonzalez</p>
-            <p class="chef-title">Founder & Executive Chef</p>
-        </div>
-        <div class="chef-image">
-            <div class="img-placeholder"></div>
-            <div class="badge">
-                <span>40+</span>
-                <span>Years of Excellence</span>
+        <div class="chef-container">
+            <div class="chef-content">
+                <p class="section-label">The Maestro</p>
+                <h2>Chef Gene Gonzalez</h2>
+                <blockquote>
+                    "Cooking is not just about recipes — it's about preserving memories, honoring tradition, and creating moments that last a lifetime."
+                </blockquote>
+                <p class="chef-name">Chef Gene Gonzalez</p>
+                <p class="chef-title">Founder & Executive Chef</p>
+            </div>
+            <div class="chef-image">
+                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80" alt="Chef Gene Gonzalez">
             </div>
         </div>
     </section>
 
-    <!-- Reservation Section -->
-    <section class="reservation" id="reservation">
-        <div class="reservation-content">
-            <p class="section-label">Join Us</p>
-            <h2>Reserve Your Table</h2>
-            <p>Experience the magic of Café Ysabel—where every meal is a celebration of Philippine culinary heritage.</p>
-            <div class="contact-details">
-                <div class="contact-item">
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="section-header">
+            <p class="section-label">Experience</p>
+            <h2>Our Ambiance</h2>
+            <p>Step into a world where heritage meets hospitality.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1000&q=80" alt="Main Dining Hall">
+                <div class="overlay"><h4>Main Dining Hall</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Garden Veranda">
+                <div class="overlay"><h4>Garden Veranda</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=600&q=80" alt="Private Room">
+                <div class="overlay"><h4>Private Room</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80" alt="Wine Collection">
+                <div class="overlay"><h4>Wine Collection</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80" alt="Bar Lounge">
+                <div class="overlay"><h4>Bar Lounge</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <p class="section-label" style="color: var(--primary);">Visit Us</p>
+            <h2>Plan Your Visit</h2>
+            <p>We look forward to welcoming you to Café Ysabel.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
                     <div class="icon">📍</div>
-                    <div class="label">Location</div>
-                    <div class="value">175 M. Paterno St., San Juan</div>
+                    <h4>Location</h4>
+                    <p>175 M. Paterno St., San Juan<br>Metro Manila, Philippines</p>
                 </div>
-                <div class="contact-item">
+                <div class="contact-card">
                     <div class="icon">📞</div>
-                    <div class="label">Reservations</div>
-                    <div class="value">0995 590 5515</div>
+                    <h4>Reservations</h4>
+                    <a href="tel:+639955905515">0995 590 5515</a>
                 </div>
-                <div class="contact-item">
+                <div class="contact-card">
                     <div class="icon">🕐</div>
-                    <div class="label">Hours</div>
-                    <div class="value">7:30 AM – 12:00 AM</div>
+                    <h4>Hours</h4>
+                    <p>Mon-Sun: 7:30 AM – 12:00 AM<br>Fri-Sat: Until 1:00 AM</p>
                 </div>
             </div>
-            <a href="mailto:cafeysabelreservation@gmail.com" class="cta-btn">Make a Reservation</a>
+
+            <div class="social-links">
+                <a href="https://facebook.com/cafeysabelphilippines" class="social-link" target="_blank">📘</a>
+                <a href="https://instagram.com/cafeysabel_official" class="social-link" target="_blank">📷</a>
+                <a href="mailto:cafeysabelreservation@gmail.com" class="social-link">📧</a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-logo">Café Ysabel</div>
-        <p class="footer-address">
-            175 M. Paterno St., Bgy. Pasadena<br>
-            San Juan, Metro Manila, Philippines<br>
-            cafeysabelreservation@gmail.com
-        </p>
-        <div class="footer-social">
-            <a href="https://www.facebook.com/cafeysabelphilippines" target="_blank">f</a>
-            <a href="https://www.instagram.com/cafeysabel_official" target="_blank">ig</a>
-        </div>
-        <p class="footer-copy">© 2026 Café Ysabel. All Rights Reserved. A Heritage Since 1982.</p>
+        <p>© 2026 Café Ysabel. A Heritage Since 1982. All Rights Reserved.</p>
     </footer>
 
     <!-- Demo Badge -->
     <div class="demo-badge">
         Website Proposal
-        
+        <span>by Jerico Royeth Angeles</span>
     </div>
 
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+        // Form submission
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your reservation request! We will confirm your booking within 24 hours.');
         });
 
-        // Smooth scroll for navigation
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1178,12 +1031,7 @@
             });
         });
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // Animation on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1191,12 +1039,12 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.heritage-content, .chef-content, .dish-card, .ambiance-card').forEach(el => {
+        document.querySelectorAll('.menu-card, .gallery-item, .contact-card').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.5s ease';
             observer.observe(el);
         });
     </script>
